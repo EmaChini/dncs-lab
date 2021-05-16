@@ -273,8 +273,10 @@ sudo ip link set dev enp0s10 up
 ```
 
 ## Test and results
-To test our network, we brought up the network with `vagrant up`, then we logged in each VM with `vagrant ssh`.
+To test our network, we brought up the network with `vagrant up`, then we logged in each VM with `vagrant ssh [name VM]`.
 Then we used the command `ping -c3 192.168.4.2` from both host-a and host-b to verify the reachability of host-c.
+
+Remember that if the VM have been already created after the command `vagrant up` it is mandatory to use the instruction `vagrant provision` or simply `--provision` otherwise the Vagrantfile will not load the .sh file.
 
 After that, in order to obtain the HMTL page from host-a, we used the command `curl 192.168.4.2`.
 The result is shown below:
